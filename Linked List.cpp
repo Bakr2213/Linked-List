@@ -58,15 +58,16 @@ public:
 
 	bool isfound(int key)
 	{
-		bool found = false;
 		Node* temp = head;
 		while (temp != NULL)
 		{
 			if (temp->data == key)
-				found = true;
+				return true;  // Item found, return immediately
+			temp = temp->next;
 		}
-		return found;
+		return false;  // Item not found
 	}
+
 };
 
 int main()
@@ -87,11 +88,11 @@ int main()
 		cout << "Enter item to insert in the list: ";
 		cin >> item;
 		lst.insertFirst(item);
-		lst.Display();
 	}
-	cout << "the list containes : " << lst.count() << endl ;
+	lst.Display();
+	cout << "the list contains : " << lst.count() << endl ;
 
-	cout << "enter item to search in the list \n";
+	cout << "enter item to search for \n";
 	cin >> item;
 	if (lst.isfound(item))
 		cout << "item found \n";
