@@ -40,7 +40,7 @@ public:
 		Node* temp = head;
 		while (temp != NULL)
 		{
-			cout << temp->data << endl;
+			cout << temp->data << endl ;
 			temp = temp->next;
 		}
 	}
@@ -77,18 +77,18 @@ int main()
 	else
 		cout << "the list containes : " << lst.count() << endl;
 	int item;
-	cout << "enter item to insert in the list \n";
-	cin >> item;
-	lst.insertFirst(item);
-	lst.Display();
-	cout << "enter item to insert in the list \n";
-	cin >> item;
-	lst.insertFirst(item);
-	lst.Display();
-	cout << "enter item to insert in the list \n";
-	cin >> item;
-	lst.insertFirst(item);
-	lst.Display();
+	int n; // number of items to insert
+
+	cout << "How many items do you want to insert in the list? \n";
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Enter item to insert in the list: ";
+		cin >> item;
+		lst.insertFirst(item);
+		lst.Display();
+	}
 	cout << "the list containes : " << lst.count() << endl ;
 
 	cout << "enter item to search in the list \n";
