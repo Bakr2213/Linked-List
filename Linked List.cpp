@@ -21,17 +21,17 @@ public:
 	}
 	void insertFirst(int newvalue)
 	{
-		Node* newnod;
-		newnod->data = newvalue;
+		Node* newnode = new Node();
+		newnode->data = newvalue;
 		if (isempty())
 		{
-			newnod->next = NULL;
-			head = newnod;
+			newnode->next = NULL;
+			head = newnode;
 		}
 		else
 		{
-			newnod->next = head;
-			head = newnod;
+			newnode->next = head;
+			head = newnode;
 		}
 	}
 
@@ -46,8 +46,8 @@ public:
 	}
 	int count()
 	{
-		int countr;
-		Node* temp = head;
+		int countr=0;
+		Node*temp = head;
 		while (temp != NULL)
 		{
 			countr++;
@@ -89,7 +89,7 @@ int main()
 	cin >> item;
 	lst.insertFirst(item);
 	lst.Display();
-	cout << "the list containes : " << lst.count() << endl;
+	cout << "the list containes : " << lst.count() << endl ;
 
 	cout << "enter item to search in the list \n";
 	cin >> item;
