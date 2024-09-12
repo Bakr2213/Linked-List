@@ -2,7 +2,7 @@
 #include "Node.h"
 #include <iostream>
 using namespace std;
-Node* head;
+
 LinkedList::LinkedList()
 {
     head = nullptr;
@@ -128,7 +128,7 @@ void LinkedList::Delete(int item)
     }
 
     // Traverse the list to find the node to delete
-    while (temp != nullptr && temp->data != value) {
+    while (temp != nullptr && temp->data != item) {
         prev = temp;
         temp = temp->next;
     }

@@ -8,6 +8,7 @@ int main()
 
     int item;
     int n;
+ 
 
     cout << "How many items do you want to insert in the list?\n";
     cin >> n;
@@ -22,20 +23,20 @@ int main()
     cout << "\nThe list contains: " << lst.count() << " items." << endl;
     lst.Display();
 
-    /*cout << "Enter item to search for: ";
+    cout << "Enter item to search for: ";
     cin >> item;
 
     if (lst.isfound(item))
         cout << "Item found\n";
     else
-        cout << "Item not found\n";*/
+        cout << "Item not found\n";
 
-   /* int newvlue;*/
+    int newvalue=0;
     cout << "Enter item to delete: ";
     cin >> item;
 
-   /* lst.insertbefore(item, newvalue);*/
-   /* lst.append(newvalue);*/
+    lst.insertbefore(item, newvalue);
+    lst.append(newvalue);
     lst.Delete(item);
     cout << "\nThe updated list contains: " << lst.count() << " items." << endl;
     lst.Display();
