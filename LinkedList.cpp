@@ -58,21 +58,17 @@ bool LinkedList::isfound(int key) {
     return false;
 }
 
-void LinkedList::insertbefore(int item, int newvalue) {
+void LinkedList::insertbefore(int item, int newvalue) 
+{
     if (isempty()) {
-        insertFirst(newvalue);
-        return;
-    }
-
-    if (!isfound(item)) {
-        cout << "Sorry, item not found\n";
+        cout << "List is empty.\n";
         return;
     }
 
     Node* newnode = new Node();
     newnode->data = newvalue;
 
-    // Case 1: Item is at the head
+    // If the item is at the head
     if (head->data == item) {
         newnode->next = head;
         head = newnode;
@@ -86,11 +82,15 @@ void LinkedList::insertbefore(int item, int newvalue) {
         temp = temp->next;
     }
 
-    // Insert before the found item
-    if (temp != nullptr) { // temp is the node containing 'item'
-        prev->next = newnode;
-        newnode->next = temp;
+    if (temp == nullptr) {
+        cout << "Item not found in the list.\n";
+        delete newnode; // Clean up if not used
+        return;
     }
+
+    prev->next = newnode;
+    newnode->next = temp;
+   
 }
 
 void LinkedList::append(int newvalue) {

@@ -34,12 +34,32 @@ int main()
     int newvalue=0;
     cout << "Enter item to delete: ";
     cin >> item;
-
-    lst.insertbefore(item, newvalue);
-    lst.append(newvalue);
     lst.Delete(item);
-    cout << "\nThe updated list contains: " << lst.count() << " items." << endl;
+
+    cout << "\nThe list contains: " << lst.count() << " items." << endl;
     lst.Display();
+
+    cout << "Enter value to insert at the beginning: ";
+    cin >> newvalue;
+    lst.insertFirst(newvalue);
+    cout << newvalue << " inserted at the beginning.\n";
+
+
+    cout << "Enter value to append: ";
+    cin >> newvalue;
+    lst.append(newvalue);
+    cout << newvalue << " appended to the list.\n";
+
+
+    cout << "Enter the value to insert before: ";
+    cin >> item;
+    cout << "Enter new value to insert: ";
+    cin >> newvalue;
+    lst.insertbefore(item, newvalue);
+
+    cout << "\nThe list contains: " << lst.count() << " items." << endl;
+    lst.Display();
+
 
 
 }
